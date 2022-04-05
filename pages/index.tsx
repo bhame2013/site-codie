@@ -1,32 +1,29 @@
+import { useEffect, useState } from "react";
+
 import { LayoutComponent } from "components/layout";
+
 import { api } from "services/api";
-import { useEffect, useState } from 'react';
-import { homeProps } from 'interfaces/models/home'
+import { HomeProps } from "interfaces/pages/home";
+
+import { BannerHome } from 'styles/conteudo/banner'
 
 export default function HomePage() {
-
-  const [response, setResponse] = useState<homeProps>({});
+  const [response, setResponse] = useState<HomeProps>({});
 
   useEffect(() => {
-      api.get('/home').then(response => setResponse(response.data));
-  }, [])
+    (async () => {
+      const { data } = await api.get<HomeProps>("/home");
+    })();
+  }, []);
 
-  if(!response){
-    return (
-      <div>loading</div>
-    )
-  }
 
   return (
     <LayoutComponent headerType="home">
-       <ul>
-          
-          {response.banners?.map(banner => {
-            return (
-              <li key={banner.titulo}>{banner.titulo}</li>
-            )
-          })}
-       </ul>
+      <BannerHome>Banner</BannerHome>
+
+      <div id="secaoEspecifca">
+
+      </div>
     </LayoutComponent>
-  )
+  );
 }

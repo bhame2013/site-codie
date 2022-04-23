@@ -21,9 +21,8 @@ export default function HomePage() {
     <LayoutComponent headerType="home">
       <BannerHome>Banner</BannerHome>
 
-      <div id="secaoEspecifca">
 
-      </div>
+      
     </LayoutComponent>
   );
 }

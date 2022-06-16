@@ -9,7 +9,6 @@ interface ButtonStyleProps {
 }
 
 export const Button = styled.div<ButtonStyleProps>`
-  background-color: #000;
 
   a,
   button {

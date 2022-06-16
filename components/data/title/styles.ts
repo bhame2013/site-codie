@@ -21,7 +21,7 @@ export const Title = styled.h2<TitleStyleProps>`
 
   h1,
   h2 {
-    line-height: 0.6;
+    line-height: 0.9;
     margin: 0;
   }
 `;

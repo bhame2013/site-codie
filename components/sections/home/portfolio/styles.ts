@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Portfolio = styled.section`
   padding-top: 100px;
+  padding-bottom: 60px;
 
   .top {
     display: flex;
@@ -15,11 +16,9 @@ export const Portfolio = styled.section`
 
     > div:last-child {
       > div {
-      margin-top: 20px;
+      margin-top: 13px;
     }
     }
-
-   
   }
 
   .list-portfolio {

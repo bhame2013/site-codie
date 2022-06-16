@@ -16,8 +16,6 @@ interface ServiceProps {
   };
 }
 
-//TODO NESTE ARQUIVO AQUI QUE VOCE IRÁ ESTILIZAR
-
 export function Service({
   image,
   title,
@@ -27,7 +25,7 @@ export function Service({
 }: ServiceProps) {
   return (
     <S.ServicesItem>
-      <div style={{ backgroundImage: `url(${image})` }}>
+      <div className="bg" style={{ backgroundImage: `url(${image})` }}>
         <Container>
           <Title
             subTitle={{

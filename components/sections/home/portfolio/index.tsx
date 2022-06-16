@@ -20,7 +20,7 @@ export function Portfolio() {
                 text: "portfólio",
               }}
               color="dark"
-              margin={30}
+              margin={45}
             />
 
             <p className="paragraph-3-medium">

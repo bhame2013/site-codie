@@ -6,10 +6,12 @@ interface TitleStyleProps {
     max: number | "45" | "60" | "100";
     variable: number;
     min: number;
+
   } 
+  marginSubTitle?: number;
 }
 
-export const Title = styled.h2<TitleStyleProps>`
+export const Title = styled.div<TitleStyleProps>`
   margin-bottom: ${(props) => `clamp( ${props.margin.min}px ,${props.margin.variable}vw , ${props.margin.max}px)`};
 
   * {
@@ -19,9 +21,14 @@ export const Title = styled.h2<TitleStyleProps>`
         : "var(--text-primary-color-dark)"};
   }
 
+  span {
+    margin-bottom: ${props => props.marginSubTitle};
+  }
+
   h1,
   h2 {
-    line-height: 0.6;
+    line-height: 0.9;
     margin: 0;
+    text-transform: lowercase;
   }
 `;

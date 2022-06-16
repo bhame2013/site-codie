@@ -3,22 +3,18 @@ import dynamic from "next/dynamic";
 
 import { useField } from "@unform/core";
 
+import { InputProps } from "./interface";
+
+import * as S from "./styles";
+
+
 const ReactInputMask = dynamic(() => import("react-input-mask"), {
   ssr: false,
 });
 
-import * as S from "./styles";
-
-interface InputProps {
-  name: string;
-  type: string;
-  mask?: string;
-  placeholder: string;
-}
-
 export function Input({
   name,
-  type,
+  type = "text",
   mask,
   placeholder
 }: InputProps) {
@@ -52,7 +48,7 @@ export function Input({
                 name={name}
                 type={type}
                 placeholder={placeholder}
-                className="paragraph-4-bold"
+                className="paragraph-4-regular"
               />
             )}
           </ReactInputMask>
@@ -63,7 +59,7 @@ export function Input({
             name={name}
             type={type}
             placeholder={placeholder}
-            className="paragraph-4-bold"
+            className="paragraph-4-regular"
           />
         )}
       </div>

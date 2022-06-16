@@ -4,6 +4,14 @@ export const Contact = styled.section`
   padding: 100px 0 80px;
   background-color: var(--text-primary-color-intermediary);
 
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+
+  }
+
   .box-left {
     text-transform: lowercase;
   }
@@ -48,5 +56,10 @@ export const Contact = styled.section`
       margin-top: 5px;
       cursor: pointer;
     }
+  }
+
+  form {
+    max-width: 680px;
+    width: 100%;
   }
 `;

@@ -1,11 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`:root {
+export const GlobalStyle = createGlobalStyle`
+:root {
     --primary-color: #ff0042;
     --secondary-color: #0000ef;
     --text-primary-color-dark: #232323;
     --text-primary-color-intermediary: #eeeeee;
     --text-primary-color-light: #fff; 
+}
+
+body {
+    background-color: var(--text-primary-color-intermediary);
 }
 
 .error-message {

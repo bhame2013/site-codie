@@ -3,6 +3,7 @@ import { LayoutComponent } from "components/layout";
 import { Banner } from "components/sections/home/banner";
 import { ServicesComponent } from "components/sections/home/services";
 import { Contact } from "components/sections/home/contact"
+import { Portfolio } from "components/sections/home/portfolio";
 
 export default function HomePage() {
   return (
@@ -10,7 +11,9 @@ export default function HomePage() {
       <Banner />
 
       <div id="scroll">
-        <ServicesComponent />
+        <ServicesComponent /> 
+
+        <Portfolio />
 
         <Contact />
       </div>

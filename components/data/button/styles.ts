@@ -14,7 +14,7 @@ export const Button = styled.div<ButtonStyleProps>`
   button {
     color: ${(props) =>
       props.color ? `var(${props.color})` : `var(--text-primary-color-dark)`};
-    min-width: 265px;
+    min-width: 285px;
     height: 48px;
     border-radius: 39px;
     border: 2px solid currentColor;

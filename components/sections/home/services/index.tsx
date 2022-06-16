@@ -5,7 +5,7 @@ export function ServicesComponent() {
   const dadosDaApi = [
     {
       id: 1,
-      image: "/images/servico-criacao-de-site.jpg",
+      image: "/images/banner.jpg",
       title: "criação de sites",
       subTitle: "/ux&ui",
       paragraph:
@@ -18,7 +18,7 @@ export function ServicesComponent() {
     },
     {
       id: 2,
-      image: "/images/servico-marketing-digital.jpg",
+      image: "/images/banner.jpg",
       title: "Marketing Digital",
       subTitle: "/redes sociais",
       paragraph:
@@ -31,7 +31,7 @@ export function ServicesComponent() {
     },
     {
       id: 3,
-      image: "/images/servico-identidade-visual.jpg",
+      image: "/images/banner.jpg",
       title: "identidade visual",
       subTitle: "/design",
       paragraph:

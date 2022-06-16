@@ -1,4 +1,6 @@
 import { Button } from "components/data/button";
+import { Container } from "components/data/container";
+import { Title } from "components/data/title";
 
 interface ServiceProps {
   image: string;
@@ -22,14 +24,30 @@ export function Service({
   link,
 }: ServiceProps) {
   return (
-    <div>
-        {title}
-      <Button
-        href={link.href}
-        textIn={link.textIn}
-        textOut={link.textOut}
-        color="--text-primary-color-light"
-      />
+    <div style={{ backgroundImage: `url(${image})` }}>
+      <Container>
+        <Title
+          subTitle={{
+            size: 4,
+            text: subTitle,
+          }}
+          title={{
+            size: 2,
+            text: title,
+          }}
+          color="light"
+          margin="45"
+          isMainTitle
+        />
+
+        <Button
+          href={link.href}
+          textIn={link.textIn}
+          textOut={link.textOut}
+          color="--text-primary-color-light"
+        />
+
+      </Container>
     </div>
   );
 }

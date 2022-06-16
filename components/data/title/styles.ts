@@ -9,7 +9,7 @@ interface TitleStyleProps {
   } 
 }
 
-export const Title = styled.h2<TitleStyleProps>`
+export const Title = styled.div<TitleStyleProps>`
   margin-bottom: ${(props) => `clamp( ${props.margin.min}px ,${props.margin.variable}vw , ${props.margin.max}px)`};
 
   * {

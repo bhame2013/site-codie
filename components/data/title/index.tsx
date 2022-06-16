@@ -6,7 +6,7 @@ export type TitleProps = {
     text: string;
   };
   title: {
-    size: 1 | 2;
+    size: 1 | 2 | 3;
     text: string;
   };
   color?: "light" | "dark";
@@ -24,23 +24,30 @@ export function Title({
   const marginCalc = (Number(margin) * 100) / 1920;
   const marginMin = Number(margin) * 0.5;
 
-  console.log(marginMin)
-
   return (
-    <S.Title color={color} margin={{
-      max: margin,
-      min: marginMin,
-      variable: marginCalc,
-    }}>
+    <S.Title
+      color={color}
+      margin={{
+        max: margin,
+        min: marginMin,
+        variable: marginCalc,
+      }}
+    >
       {subTitle && (
         <span className={`title-${subTitle.size ? subTitle.size : 2}-regular`}>
           {subTitle.text}
         </span>
       )}
 
-      <div className={`title-${title.size ? title.size : 1}-bold`}>
-        {isMainTitle ? <h1>{title.text}</h1> : <h2>{title.text}</h2>}
-      </div>
+      {isMainTitle ? (
+        <h1 className={`title-${title.size ? title.size : 1}-bold`}>
+          {title.text}
+        </h1>
+      ) : (
+        <h2 className={`title-${title.size ? title.size : 1}-bold`}>
+          {title.text}
+        </h2>
+      )}
     </S.Title>
   );
 }

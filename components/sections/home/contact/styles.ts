@@ -16,19 +16,11 @@ export const Contact = styled.section`
     text-transform: lowercase;
   }
 
-  h2 + * {
-    margin-top: 20px;
-  }
-
-  h2 {
+ .description-contact {
     margin-bottom: 0;
   }
 
-  p {
-    margin-bottom: 0;
-  }
-
-  p + * {
+  .description-contact + * {
     margin-top: 43px;
   }
   ul {
@@ -61,5 +53,11 @@ export const Contact = styled.section`
   form {
     max-width: 680px;
     width: 100%;
+
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 `;

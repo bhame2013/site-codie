@@ -5,7 +5,7 @@ import { Form } from "@unform/web";
 import parser from "html-react-parser";
 import { FormHandles } from "@unform/core";
 
-import { YupValidation } from "services/yup-validation"
+import { YupValidation } from "services/yup-validation";
 import { ContactOptions } from "./contact-options";
 
 import { Title } from "components/data/title";
@@ -72,9 +72,16 @@ export function Contact() {
     <S.Contact>
       <Container>
         <div className="box-left">
-          <h2 className="title-3-bold">entre em contato</h2>
+          <Title
+            title={{
+              size: 3,
+              text: "entre em contato",
+            }}
+            color="dark"
+            margin={20}
+          />
 
-          <p className="paragraph-2-regular">
+          <p className="paragraph-2-regular description-contact">
             preencha os campos ao lado e entraremos em contato com vocÊ! <br />
             <span className="-bold">a Codie pode te ajudar a</span>
           </p>
@@ -109,12 +116,16 @@ export function Contact() {
 
           <TextArea name="message" placeholder="Mensagem" />
 
-          <Button
-            type="submit"
-            textIn="enviar"
-            textOut="enviar"
-            color="--text-primary-color-dark"
-          />
+          <div className="actions">
+            <div></div>
+
+            <Button
+              type="submit"
+              textIn="enviar"
+              textOut="enviar"
+              color="--text-primary-color-dark"
+            />
+          </div>
         </Form>
       </Container>
     </S.Contact>

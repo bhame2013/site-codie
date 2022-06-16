@@ -3,10 +3,9 @@ import { FooterComponent } from './footer';
 
 interface LayoutProps {
     children?: React.ReactNode;
-    headerType?: 'home' | 'internal'
 }
 
-export function LayoutComponent({ children, headerType }: LayoutProps) {
+export function LayoutComponent({ children }: LayoutProps) {
 
     return (
         <>

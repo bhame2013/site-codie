@@ -1,15 +1,47 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-interface HeaderProps {
-    fontSize?:string
-    headerType?: "home" | "internal"
-}
+export const Header = styled.header`
+  position: fixed;
+  top: clamp(30px, 7.41vh, 80px);
+  left: 0;
+  width: 100%;
+  z-index: 4;
 
-export const Header = styled.header<HeaderProps> `
+  .top--header {
+    max-width: 89.6vw;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: clamp(60px, 6vw, 140px);
 
-font-size:${props=>props.fontSize};
+    .block-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 40px;
+      cursor: pointer;
 
-nav.principal {
-    display:block;
-}
-`
+      div {
+        background-color: #fff;
+        height: 3.9px;
+        width: 100%;
+      }
+    }
+
+    .block-bar:hover {
+      div {
+        background-color: var(--primary-color);
+      }
+    }
+  }
+
+  .top--header.active {
+    .block-bar {
+      div {
+        background-color: var(--secondary-color);
+      }
+    }
+  }
+`;

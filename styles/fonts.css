@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Objective';
+    src: url('/fonts/Objective-Bold.otf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Objective';
+    src: url('/fonts/Objective-Medium.otf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Objective';
+    src: url('/fonts/Objective-Regular.otf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Objective';
+    src: url('/fonts/Objective-Light.otf') format('truetype');
+    font-weight: 300;
+}
+
+body {
+    font-family: 'Objective' !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+strong,
+time,
+address,
+i,
+a,
+b,
+label,
+li,
+td {
+    text-rendering: optimizeLegibility !important;
+}
+
+[class*="-italic"] {
+    font-style: italic;
+}
+
+[class*="-black"] {
+    font-weight: 900;
+}
+
+[class*="-book"] {
+    font-weight: 800;
+}
+
+[class*="-bold"] {
+    font-weight: 700;
+}
+
+[class*="-semibold"] {
+    font-weight: 600;
+}
+
+[class*="-medium"] {
+    font-weight: 500;
+}
+
+[class*="-regular"] {
+    font-weight: 400;
+}
+
+[class*="-light"] {
+    font-weight: 300;
+}
+
+/* titulos */
+[class*="title-1"] {
+    font-size: 80px;
+}
+[class*="title-2"] {
+    font-size: 66px;
+}
+[class*="title-3"] {
+    font-size: 50px;
+}
+[class*="title-4"] {
+    font-size: 30px;
+}
+
+/* paragrafos */
+[class*="paragraph-1"] {
+    font-size: 24px;
+} 
+[class*="paragraph-2"] {
+    font-size: 20px;
+} 
+[class*="paragraph-3"] {
+    font-size: 18px;
+} 
+[class*="paragraph-4"] {
+    font-size: 16px;
+} 
+
+
+/* links */
+[class*="link-1"] {
+    font-size: 20px;
+} 
+[class*="link-2"] {
+    font-size: 18px;
+} 
+[class*="link-3"] {
+    font-size: 16px;
+} 
+
+
+

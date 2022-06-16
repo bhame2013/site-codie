@@ -1,9 +1,11 @@
 import { AppProps } from 'next/app'
 import Head from "next/head";
+
 import '../styles/reset.css'
+import '../styles/fonts.css'
+
 import { GlobalStyle } from "../styles/global"
-import { FontStyle } from "../styles/fonts"
-import { Configs } from 'services/configs';
+
 import { SharedProvider } from 'services/context/shared';
 
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper'
@@ -23,13 +25,10 @@ const App = ({ Component, pageProps }: AppProps) => {
                 <meta name="referrer" content="origin" />
                 <meta name="mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
-                <meta name="author" content={Configs.author} />
                 
                 <meta name="google-site-verification" content="" />
                 <meta name="rating" content="general" />
             </Head>
-
-            <FontStyle />
 
             <GlobalStyle />
 

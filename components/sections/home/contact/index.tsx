@@ -81,7 +81,7 @@ export function Contact() {
             margin={20}
           />
 
-          <p className="paragraph-2-regular description-contact">
+          <p className="paragraph-4-regular description-contact">
             preencha os campos ao lado e entraremos em contato com vocÊ! <br />
             <span className="-bold">a Codie pode te ajudar a</span>
           </p>

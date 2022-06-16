@@ -9,7 +9,6 @@ export const Contact = styled.section`
     align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
-
   }
 
   .box-left {
@@ -21,8 +20,9 @@ export const Contact = styled.section`
   }
 
   .description-contact + * {
-    margin-top: 43px;
+    margin-top: 35px;
   }
+  
   ul {
     display: flex;
     flex-direction: column;

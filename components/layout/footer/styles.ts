@@ -141,22 +141,6 @@ export const Footer = styled.footer`
   }
 
   @media only screen and (max-width: 1024px) {
-    padding-top:clamp(25px,4.43vw,40px);
-
-    .container {
-      max-width: 95vw;
-    }
-
-    .flex-footer-itens + * {
-      margin-top: 45px;
-    }
-
-    .services-footer {
-      display: none;
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
     .flex-footer-itens {
       flex-direction: column;
       align-items: center;
@@ -166,6 +150,10 @@ export const Footer = styled.footer`
       }
 
       div:nth-child(2){
+        display: none;
+      }
+
+      div:nth-child(3){
         display: none;
       }
     }
@@ -211,7 +199,7 @@ export const Footer = styled.footer`
 
     .bottom {
       justify-content: center;
-      
+
       div {
         display: flex;
         flex-direction: column;

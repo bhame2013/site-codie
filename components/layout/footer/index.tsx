@@ -12,7 +12,7 @@ export function FooterComponent() {
       <Container>
         <div className="flex-footer-itens">
           <Link href="/" passHref>
-            <a href="replaced">
+            <a href="replaced" className="logo-footer-mobile">
               <img src="/images/logo-codie.png" alt="logo marca" />
             </a>
           </Link>

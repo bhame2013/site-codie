@@ -16,6 +16,10 @@ export const Footer = styled.footer`
     gap: 20px;
   }
 
+  .logo-footer-mobile {
+    display: none;
+  }
+
   .flex-footer-itens + * {
     margin-top: 80px;
   }
@@ -166,6 +170,10 @@ export const Footer = styled.footer`
       }
     }
 
+    .logo-footer-mobile {
+      display: block;
+    }
+
     .institucional-footer {
       display: none;
     }
@@ -202,6 +210,8 @@ export const Footer = styled.footer`
     }
 
     .bottom {
+      justify-content: center;
+      
       div {
         display: flex;
         flex-direction: column;

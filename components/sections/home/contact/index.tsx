@@ -96,7 +96,7 @@ export function Contact() {
                 >
                   <img src="/images/check.png" alt="" />
 
-                  <span>{parser(option.label)}</span>
+                  <span className="item-list-contact">{parser(option.label)}</span>
                 </li>
               );
             })}

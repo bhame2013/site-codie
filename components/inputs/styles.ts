@@ -14,7 +14,8 @@ export const Input = styled.div`
     color: var(--text-primary-color-dark);
   }
 
-  input::placeholder, textarea::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     color: var(--text-primary-color-dark);
   }
 
@@ -25,5 +26,23 @@ export const Input = styled.div`
   textarea {
     height: 158px;
     padding-top: 15px;
+    resize: none;
+  }
+
+  @media only screen and (max-width: 1600px) {
+    textarea {
+      height: 145px;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    input {
+      height: 46px;
+      padding-top: 2px;
+    }
+
+    textarea {
+      height: 135px;
+    }
   }
 `;

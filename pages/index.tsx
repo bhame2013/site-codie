@@ -1,5 +1,6 @@
 import { LayoutComponent } from "components/layout";
 
+import { Blog } from "components/sections/home/blog";
 import { About } from "components/sections/home/about";
 import { Banner } from "components/sections/home/banner";
 import { Contact } from "components/sections/home/contact";
@@ -18,6 +19,8 @@ export default function HomePage() {
         <Portfolio />
 
         {/* <Customers theme="--secondary-color"/> */}
+
+        <Blog />
 
         <About />
 

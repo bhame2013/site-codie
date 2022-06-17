@@ -14,8 +14,11 @@ body {
 }
 
 .error-message {
-    color: var(--error);
+    color: var(--primary-color);
     font-size: 12px;
+    margin-top: 7px;
+    display: block;
+    padding-left: 10px;
 }
 
 html {

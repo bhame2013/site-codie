@@ -11,8 +11,14 @@ export function FooterComponent() {
     <S.Footer>
       <Container>
         <div className="flex-footer-itens">
+          <Link href="/" passHref>
+            <a href="replaced">
+              <img src="/images/logo-codie.png" alt="logo marca" />
+            </a>
+          </Link>
+
           <div>
-            <h3>institucional</h3>
+            <h3 className="link-3-bold">institucional</h3>
 
             <ul>
               <li>
@@ -37,8 +43,8 @@ export function FooterComponent() {
             </ul>
           </div>
 
-          <div>
-            <h3>serviços</h3>
+          <div className="services-footer">
+            <h3 className="link-3-bold">serviços</h3>
 
             <ul>
               <li>
@@ -67,8 +73,8 @@ export function FooterComponent() {
             </ul>
           </div>
 
-          <div>
-            <h3>redes sociais</h3>
+          <div className="redes-footer">
+            <h3 className="link-3-bold">redes sociais</h3>
 
             <ul>
               {footerNavigation.redesSociais.map((rede) => {
@@ -78,7 +84,7 @@ export function FooterComponent() {
                       <i>
                         <img src={rede.imagem} />
                       </i>
-                      {rede.text}
+                      <span>{rede.text}</span>
                     </a>
                   </li>
                 );
@@ -86,8 +92,8 @@ export function FooterComponent() {
             </ul>
           </div>
 
-          <div>
-            <h3>contato</h3>
+          <div className="contact-footer">
+            <h3 className="link-3-bold">contato</h3>
 
             <ul>
               {footerNavigation.contato.map((item) => {

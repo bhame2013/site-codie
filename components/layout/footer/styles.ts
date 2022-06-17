@@ -101,4 +101,120 @@ export const Footer = styled.footer`
       margin-left: 70px;
     }
   }
+
+  @media only screen and (max-width: 1600px) {
+    .flex-footer-itens + * {
+      margin-top: 70px;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    .container {
+      max-width: 85vw;
+    }
+
+    .flex-footer-itens + * {
+      margin-top: 65px;
+    }
+
+    h3 + * {
+      margin-top: 5px;
+    }
+
+    li+li {
+      margin-top: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .container {
+      max-width: 90vw;
+    }
+
+    .flex-footer-itens + * {
+      margin-top: 55px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    padding-top:clamp(25px,4.43vw,40px);
+
+    .container {
+      max-width: 95vw;
+    }
+
+    .flex-footer-itens + * {
+      margin-top: 45px;
+    }
+
+    .services-footer {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .flex-footer-itens {
+      flex-direction: column;
+      align-items: center;
+
+      ul {
+        text-align: center;
+      }
+
+      div:nth-child(2){
+        display: none;
+      }
+    }
+
+    .institucional-footer {
+      display: none;
+    }
+
+    .redes-footer, .contact-footer  {
+      text-align: center;
+
+      ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      li+li {
+        margin-top: 0;
+      }
+
+      span {
+        display: none;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+
+        i {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .flex-footer-itens + * {
+      margin-top: 30px;
+    }
+
+    .bottom {
+      div {
+        display: flex;
+        flex-direction: column;
+        text-align:center;
+      }
+
+      [class*="link"] + * {
+        margin-left: 0;
+      }
+
+      .logo {
+        display: none;
+      }
+    }
+  }
 `;

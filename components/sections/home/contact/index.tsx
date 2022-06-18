@@ -15,6 +15,7 @@ import { Container } from "components/data/container";
 import { TextArea } from "components/inputs/textarea";
 
 import * as S from "./styles";
+import { api } from "services/api";
 
 interface SubmitForm {
   name: string;
@@ -44,9 +45,15 @@ export function Contact() {
       setError("");
 
       const schema = Yup.object().shape({
+        name: Yup.string().required("Por favor, digite o seu nome."),
         email: Yup.string()
-          .email("Please enter a valid email")
-          .required("Please enter a email"),
+          .email("Por favor, insira um email válido")
+          .required("Por favor, digite o seu e-mail"),
+        phone: Yup.string()
+          .required("Por favor, digite o seu telefone")
+          .min(11, "Por favor, digite um telefone válido"),
+        subject: Yup.string().required("Por favor, digite um assunto."),
+        message: Yup.string().required("Por favor, digite um mensagem."),
       });
 
       await schema.validate(data, {
@@ -71,6 +78,8 @@ export function Contact() {
   return (
     <S.Contact>
       <Container>
+
+    
         <div className="box-left">
           <Title
             title={{
@@ -83,7 +92,7 @@ export function Contact() {
 
           <p className="paragraph-4-regular description-contact">
             preencha os campos ao lado e entraremos em contato com vocÊ! <br />
-            <span className="-bold">a Codie pode te ajudar a</span>
+            <strong className="-bold">a Codie pode te ajudar a </strong>
           </p>
 
           <ul>
@@ -96,7 +105,7 @@ export function Contact() {
                 >
                   <img src="/images/check.png" alt="" />
 
-                  <span>{parser(option.label)}</span>
+                  <span className="item-list-contact">{parser(option.label)}</span>
                 </li>
               );
             })}

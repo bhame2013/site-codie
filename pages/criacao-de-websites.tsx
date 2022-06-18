@@ -7,7 +7,6 @@ import { Banner } from "components/sections/home/banner";
 import { Contact } from "components/sections/home/contact";
 import { Portfolio } from "components/sections/home/portfolio";
 import { Customers } from "components/sections/home/customers";
-import { Depositions } from "components/sections/home/depositions";
 import { ServicesComponent } from "components/sections/home/services";
 
 //interfaces
@@ -15,6 +14,7 @@ import { IBanner } from "components/sections/home/banner";
 
 import { api } from "services/api";
 import { Loading } from "components/data/loading";
+import { Depositions } from "components/sections/home/depositions";
 
 export default function HomePage() {
   // const [banner, setBanner] = useState<IBanner[]>([]);
@@ -42,13 +42,12 @@ export default function HomePage() {
       <Banner banners={[]} />
 
       <div id="scroll">
-        <ServicesComponent />
 
         <Portfolio />
 
         <Customers />
 
-        <Depositions theme="--secondary-color" />
+        <Depositions theme="--secondary-color"/>
 
         <Blog />
 

@@ -1,16 +1,20 @@
 import { AppProps } from 'next/app'
 import Head from "next/head";
 
+import "swiper/css";
+import "swiper/css/effect-fade";
+
 import '../styles/reset.css'
 import '../styles/fonts.css'
+
 
 import { GlobalStyle } from "../styles/global"
 
 import { SharedProvider } from 'services/context/shared';
 
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper'
+import SwiperCore, { Navigation, Pagination, Autoplay, EffectFade } from 'swiper'
 
-SwiperCore.use([Navigation, Pagination, Autoplay]);
+SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 const App = ({ Component, pageProps }: AppProps) => {
 

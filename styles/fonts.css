@@ -81,12 +81,15 @@ td {
 [class*="title-1"] {
     font-size: 80px;
 }
+
 [class*="title-2"] {
     font-size: 66px;
 }
+
 [class*="title-3"] {
     font-size: 50px;
 }
+
 [class*="title-4"] {
     font-size: 30px;
 }
@@ -94,28 +97,142 @@ td {
 /* paragrafos */
 [class*="paragraph-1"] {
     font-size: 24px;
-} 
+}
+
 [class*="paragraph-2"] {
     font-size: 20px;
-} 
+}
+
 [class*="paragraph-3"] {
     font-size: 18px;
-} 
+}
+
 [class*="paragraph-4"] {
     font-size: 16px;
-} 
+}
 
 
 /* links */
 [class*="link-1"] {
     font-size: 20px;
-} 
+}
+
 [class*="link-2"] {
     font-size: 18px;
-} 
+}
+
 [class*="link-3"] {
     font-size: 16px;
-} 
+}
 
+@media only screen and (max-width:1600px) {
 
+    /* titulo */
+    [class*="title-3"] {
+        font-size: 46px;
+    }
 
+    /* paragraph */
+    [class*="paragraph-1"] {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width:1400px) {
+
+    /* titulo */
+    [class*="title-3"] {
+        font-size: 42px;
+    }
+
+    /* paragraph */
+    [class*="paragraph-1"] {
+        font-size: 20px;
+    }
+
+    [class*="paragraph-3"] {
+        font-size: 17px;
+    }
+
+    [class*="paragraph-4"] {
+        font-size: 15.5px;
+    }
+
+    /* links */
+    [class*="link-3"] {
+        font-size: 15.5px;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+
+    /* titulo */
+    [class*="title-3"] {
+        font-size: 38px;
+    }
+
+    /* paragraph */
+    [class*="paragraph-1"] {
+        font-size: 18px;
+    }
+
+    [class*="paragraph-3"] {
+        font-size: 16px;
+    }
+
+    [class*="paragraph-4"] {
+        font-size: 15px;
+    }
+
+    /* links */
+    [class*="link-3"] {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+
+    /* titulo */
+    [class*="title-3"] {
+        font-size: 34px;
+    }
+
+    /* paragraph */
+    [class*="paragraph-1"] {
+        font-size: 17px;
+    }
+
+    [class*="paragraph-3"] {
+        font-size: 15px;
+    }
+
+    [class*="paragraph-4"] {
+        font-size: 14px;
+    }
+
+    /* links */
+    [class*="link-3"] {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+
+    /* titulo */
+    [class*="title-3"] {
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+
+    /* titulo */
+    [class*="title-3"] {
+        font-size: clamp(28px, 4vw, 32px);
+    }
+
+    /* paragraph */
+    [class*="paragraph-1"] {
+        font-size: clamp(15px, 4vw, 17px);
+    }
+}

@@ -1,3 +1,4 @@
+import React, { Fragment } from "react";
 import { Container } from "components/data/container";
 import { Title } from "components/data/title";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -76,7 +77,7 @@ export function Customers({ theme }: CustomerProps) {
         <div className="slide-track">
           {listaDeImagens.map((lista) => {
             return (
-              <>
+              <Fragment key={lista.id}>
                 <div className="slide">
                   <div>
                     <img src={lista.imagem} height="100" width="250" />
@@ -87,7 +88,7 @@ export function Customers({ theme }: CustomerProps) {
                     <img src={lista.imagem} height="100" width="250" />
                   </div>
                 </div>
-              </>
+              </Fragment>
             );
           })}
         </div>

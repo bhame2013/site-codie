@@ -3,10 +3,9 @@ import { Title } from "components/data/title";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Customer } from "./customer";
 import * as S from "./styles";
-import "swiper/css";
 
 interface CustomerProps {
-    theme: "--primary-color" | "--secondary-color"
+  theme: "--primary-color" | "--secondary-color";
 }
 
 export function Customers({ theme }: CustomerProps) {
@@ -28,7 +27,38 @@ export function Customers({ theme }: CustomerProps) {
       category: "/Marketing digital2",
     },
   ];
-  
+
+  const listaDeImagens = [
+    {
+      id: 1,
+      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+    },
+    {
+      id: 2,
+      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+    },
+    {
+      id: 3,
+      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+    },
+    {
+      id: 4,
+      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+    },
+    {
+      id: 5,
+      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+    },
+    {
+      id: 6,
+      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+    },
+    {
+      id: 7,
+      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+    },
+  ];
+
   return (
     <S.Customers theme={theme}>
       <Container>
@@ -38,9 +68,32 @@ export function Customers({ theme }: CustomerProps) {
             text: "nossos clientes",
           }}
           color="dark"
-          margin="100"
+          margin={80}
         />
+      </Container>
 
+      <div className="slider">
+        <div className="slide-track">
+          {listaDeImagens.map((lista) => {
+            return (
+              <>
+                <div className="slide">
+                  <div>
+                    <img src={lista.imagem} height="100" width="250" />
+                  </div>
+                </div>
+                <div className="slide">
+                  <div>
+                    <img src={lista.imagem} height="100" width="250" />
+                  </div>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <Container>
         <div className="carousel">
           <h2 className="title-3-regular">
             <span className="-bold">o que nossos Clientes falam</span> <br />

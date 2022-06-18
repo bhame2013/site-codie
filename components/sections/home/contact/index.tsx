@@ -15,6 +15,7 @@ import { Container } from "components/data/container";
 import { TextArea } from "components/inputs/textarea";
 
 import * as S from "./styles";
+import { api } from "services/api";
 
 interface SubmitForm {
   name: string;
@@ -77,6 +78,8 @@ export function Contact() {
   return (
     <S.Contact>
       <Container>
+
+    
         <div className="box-left">
           <Title
             title={{

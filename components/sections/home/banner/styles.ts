@@ -1,6 +1,17 @@
 import styled from "styled-components";
 
 export const Banner = styled.section`
+  min-height: 100vh;
+  position: relative;
+
+  .carousel-absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
   .bg {
     min-height: 100vh;
     width: 100%;
@@ -8,14 +19,17 @@ export const Banner = styled.section`
     background-position: center center;
     background-repeat: no-repeat;
     display: flex;
+  }
 
-    .container {
-      padding: calc(28px + clamp(40px, 7.41vh, 80px) + 15px) 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      gap: clamp(20px, 2.35vw, 50px);
-    }
+  .container {
+    padding: calc(28px + clamp(40px, 7.41vh, 80px) + 15px) 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: clamp(20px, 2.35vw, 50px);
+    min-height: 100vh;
+    z-index: 2;
+    position: relative;
   }
 
   p {

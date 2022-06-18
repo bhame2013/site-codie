@@ -45,7 +45,7 @@ export default function HomePage() {
 
         <Portfolio />
 
-        <Customers theme="--secondary-color"/>
+        {/* <Customers theme="--secondary-color"/> */}
 
         <Blog />
 

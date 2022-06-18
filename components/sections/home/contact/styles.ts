@@ -13,6 +13,7 @@ export const Contact = styled.section`
 
   .box-left {
     text-transform: lowercase;
+    width: 100%;
   }
 
   .description-contact {
@@ -138,13 +139,27 @@ export const Contact = styled.section`
 
     .box-left,
     form {
-      max-width: 502px;
+      max-width: 430px;
+    }
+
+    p {
+      max-width: 345px;
+      margin: 0 auto;
+    }
+
+    .description-contact + * {
+      margin-top: 20px;
     }
 
     form {
       .actions {
         justify-content: center;
       }
+    }
+
+    input,
+    textarea {
+      max-width: 100%;
     }
   }
 
@@ -190,7 +205,7 @@ export const Contact = styled.section`
       }
     }
 
-    .description-contact+*{
+    .description-contact + * {
       margin-top: 15px;
     }
 

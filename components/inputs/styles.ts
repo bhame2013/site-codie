@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Input = styled.div`
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
   input,
   textarea {
@@ -31,7 +31,7 @@ export const Input = styled.div`
 
   @media only screen and (max-width: 1600px) {
     textarea {
-      height: 145px;
+      height: 148px;
     }
   }
 
@@ -42,7 +42,62 @@ export const Input = styled.div`
     }
 
     textarea {
-      height: 135px;
+      height: 138px;
     }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    input {
+      height: 44px;
+    }
+
+    textarea {
+      height: 128px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    input,
+    textarea {
+      padding: 2px 18px;
+    }
+
+    input {
+      height: 42px;
+    }
+
+    textarea {
+      height: 118px;
+      padding-top: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    input,
+    textarea {
+      padding: 2px 16px;
+    }
+
+    input {
+      height: 40px;
+    }
+
+    textarea {
+      height: 108px;
+      padding-top: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    input,
+    textarea {
+      padding: 2px 14px;
+    }
+
+    textarea {
+      height: 100px;
+      padding-top: 8px;
+    }
+
   }
 `;

@@ -7,6 +7,7 @@ import { Banner } from "components/sections/home/banner";
 import { Contact } from "components/sections/home/contact";
 import { Portfolio } from "components/sections/home/portfolio";
 import { Customers } from "components/sections/home/customers";
+import { Depositions } from "components/sections/home/depositions";
 import { ServicesComponent } from "components/sections/home/services";
 
 //interfaces
@@ -45,7 +46,9 @@ export default function HomePage() {
 
         <Portfolio />
 
-        <Customers theme="--secondary-color"/>
+        <Customers />
+
+        <Depositions theme="--secondary-color" />
 
         <Blog />
 

@@ -215,3 +215,24 @@ td {
         font-size: 14px;
     }
 }
+
+@media only screen and (max-width:768px) {
+
+    /* titulo */
+    [class*="title-3"] {
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+
+    /* titulo */
+    [class*="title-3"] {
+        font-size: clamp(28px, 4vw, 32px);
+    }
+
+    /* paragraph */
+    [class*="paragraph-1"] {
+        font-size: clamp(15px, 4vw, 17px);
+    }
+}

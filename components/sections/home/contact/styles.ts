@@ -102,9 +102,11 @@ export const Contact = styled.section`
       padding-top: 2px;
     }
 
-    li {
-      img {
-        max-width: 19px;
+    ul {
+      li {
+        img {
+          max-width: 19px;
+        }
       }
     }
   }
@@ -122,8 +124,8 @@ export const Contact = styled.section`
   }
 
   @media only screen and (max-width: 1024px) {
-    padding: 50px 0 45px;
-    
+    padding: 35px 0 45px;
+
     .container {
       flex-direction: column;
       align-items: center;
@@ -131,7 +133,7 @@ export const Contact = styled.section`
     }
 
     .box-left {
-        text-align: center;
+      text-align: center;
     }
 
     .box-left,
@@ -147,8 +149,53 @@ export const Contact = styled.section`
   }
 
   @media only screen and (max-width: 768px) {
+    padding: 30px 0 25px;
+
+    .box-left {
+      div {
+        margin-bottom: 5px;
+      }
+    }
+
+    ul {
+      li {
+        img {
+          max-width: 17px;
+        }
+      }
+    }
   }
 
   @media only screen and (max-width: 500px) {
+    padding: 20px 0;
+
+    .container {
+      max-width: 90vw;
+    }
+
+    .box-left {
+      max-width: 330px;
+    }
+
+    ul {
+      max-width: 300px;
+      margin: 0 auto;
+
+      li {
+        gap: 7px;
+
+        img {
+          max-width: 15px;
+        }
+      }
+    }
+
+    .description-contact+*{
+      margin-top: 15px;
+    }
+
+    form {
+      max-width: 360px;
+    }
   }
 `;

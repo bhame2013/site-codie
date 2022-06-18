@@ -14,6 +14,7 @@ import { IBanner } from "components/sections/home/banner";
 
 import { api } from "services/api";
 import { Loading } from "components/data/loading";
+import { Depositions } from "components/sections/home/depositions";
 
 export default function HomePage() {
   // const [banner, setBanner] = useState<IBanner[]>([]);
@@ -41,11 +42,12 @@ export default function HomePage() {
       <Banner banners={[]} />
 
       <div id="scroll">
-        <ServicesComponent />
 
         <Portfolio />
 
-        {/* <Customers theme="--secondary-color"/> */}
+        <Customers />
+
+        <Depositions theme="--secondary-color"/>
 
         <Blog />
 

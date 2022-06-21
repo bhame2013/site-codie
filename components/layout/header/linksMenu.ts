@@ -4,16 +4,12 @@ export const linksMenu = [
       href: "/sobre",
     },
     {
-      text: "Sites",
-      href: "/sites",
-    },
-    {
-      text: "Marketing",
-      href: "/marketing",
-    },
-    {
       text: "Portfólio",
       href: "/portfolio",
+    },
+    {
+      text: "Blog",
+      href: "/blog",
     },
     {
       text: "Contato",

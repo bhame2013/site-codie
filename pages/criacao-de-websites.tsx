@@ -42,16 +42,17 @@ export default function HomePage() {
       <Banner banners={[]} />
 
       <div id="scroll">
+        {/* <InformationService />
+
+        <Differentials />
 
         <Portfolio />
 
-        <Customers />
+        <Depositions theme="--secondary-color" />
 
-        <Depositions theme="--secondary-color"/>
+        <Faq />
 
-        <Blog />
-
-        <About />
+        <Operations /> */}
 
         <Contact />
       </div>

@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+import { api } from "services/api";
+
+import { Loading } from "components/data/loading";
 import { LayoutComponent } from "components/layout";
 import { Blog } from "components/sections/home/blog";
 import { About } from "components/sections/home/about";
@@ -10,12 +13,8 @@ import { Customers } from "components/sections/home/customers";
 import { Depositions } from "components/sections/home/depositions";
 import { ServicesComponent } from "components/sections/home/services";
 
-//interfaces
 import { HomeProps } from "interfaces/pages/home";
 import { Servico } from "interfaces/models/catalogo/servico"
-
-import { api } from "services/api";
-import { Loading } from "components/data/loading";
 
 
 export default function HomePage() {

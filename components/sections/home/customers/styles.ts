@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Customers = styled.section`
   padding: 50px 0 80px;
   overflow: hidden;
@@ -18,7 +17,7 @@ export const Customers = styled.section`
     overflow: hidden;
     position: relative;
     width: 100%;
-    
+
     .slide-track {
       animation: scroll 40s linear infinite;
       display: flex;
@@ -31,16 +30,15 @@ export const Customers = styled.section`
       padding: 0 15px;
 
       div {
-        width: 100%;
-        height: 100%;
-      background-color: #fff;
+        width: inherit;
+        height: inherit;
+        position: relative;
 
-      }
-
-      img {
-        height: 100%;
-        object-fit: contain;
-        width: 100%;
+        > span {
+          img {
+            object-fit: contain !important;
+          }
+        }
       }
     }
   }

@@ -8,6 +8,7 @@ import { Contact } from "components/sections/home/contact";
 import { Portfolio } from "components/sections/home/portfolio";
 import { Customers } from "components/sections/home/customers";
 import { ServicesComponent } from "components/sections/home/services";
+import { InformationService } from "components/data/information-service";
 
 //interfaces
 import { IBanner } from "components/sections/home/banner";
@@ -16,35 +17,25 @@ import { api } from "services/api";
 import { Loading } from "components/data/loading";
 import { Depositions } from "components/sections/home/depositions";
 
-export default function HomePage() {
-  // const [banner, setBanner] = useState<IBanner[]>([]);
-  // const [loading, setLoading] = useState(true)
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const promise1 = api.get<IBanner[]>("/banner/home");
-  //     const promise2 = api.get("/portfolio");
-
-  //     Promise.all([promise1, promise2]).then(function (values) {
-  //       console.log(values);
-
-  //       setLoading(false)
-  //     });
-  //   })();
-  // }, []);
-
-  // if(loading) {
-  //   return <Loading/>
-  // }
-
+export default function CriacaoDeWebSitesPage() {
   return (
     <LayoutComponent>
       <Banner banners={[]} />
 
       <div id="scroll">
-        {/* <InformationService />
+        <InformationService
+          theme="--secondary-color"
+          title={
+            "<p>Porque <span>desenvolver</span> seu <span>site</span> com a Codie </p>"
+          }
+          image="criacao-de-websites"
+          listService={[
+            "Para <span>profissionalizar</span> seu negócio e ganhar mais <span>visibilidade na internet</span>;",
+            "Para ter mais <span>relevância</span> no Google, <span>conquistar</span> novos cliente e <span>valorizar</span> a sua marca;",
+          ]}
+        />
 
-        <Differentials />
+        {/* <Differentials />
 
         <Portfolio />
 
@@ -52,7 +43,7 @@ export default function HomePage() {
 
         <Faq />
 
-        <Operations /> */}
+        <Operations />  */}
 
         <Contact />
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NextImage } from "components/data/NextImage";
 
 import { api } from "services/api";
 
@@ -25,10 +26,13 @@ export function Banner({ banners }: BannerProps) {
       <div className="carousel-absolute">
         {banners.length === 0 ? (
           <div className="carousel-absolute">
-            <div
-              className="bg"
-              style={{ backgroundImage: `url("/images/banner.jpg")` }}
-            ></div>
+            <div className="bg">
+              <NextImage
+                src="/images/banner.jpg"
+                alt={"imagem banner codie"}
+                layout="fill"
+              />
+            </div>
           </div>
         ) : (
           <Swiper
@@ -48,10 +52,13 @@ export function Banner({ banners }: BannerProps) {
             {banners.map((banner) => {
               return (
                 <SwiperSlide key={banner.id + "banner-home"}>
-                  <div
-                    className="bg"
-                    style={{ backgroundImage: `url(${banner.imagem})` }}
-                  ></div>
+                  <div className="bg">
+                    <NextImage
+                      src={banner.imagem}
+                      alt={"imagem de" + banner.titulo}
+                      layout="fill"
+                    />
+                  </div>
                 </SwiperSlide>
               );
             })}

@@ -15,10 +15,7 @@ export const Banner = styled.section`
   .bg {
     min-height: 100vh;
     width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: flex;
+    position: relative;
   }
 
   .container {

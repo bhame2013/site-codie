@@ -3,40 +3,37 @@ import { Container } from "components/data/container";
 import { Title } from "components/data/title";
 
 import * as S from "./styles";
-
-
+import { NextImage } from "components/data/NextImage";
 
 export function Customers() {
-
-
   const listaDeImagens = [
     {
       id: 1,
-      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+      imagem: "/images/logo-marca-default.png",
     },
     {
       id: 2,
-      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+      imagem: "/images/logo-marca-default.png",
     },
     {
       id: 3,
-      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+      imagem: "/images/logo-marca-default.png",
     },
     {
       id: 4,
-      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+      imagem: "/images/logo-marca-default.png",
     },
     {
       id: 5,
-      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+      imagem: "/images/logo-marca-default.png",
     },
     {
       id: 6,
-      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+      imagem: "/images/logo-marca-default.png",
     },
     {
       id: 7,
-      imagem: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
+      imagem: "/images/logo-marca-default.png",
     },
   ];
 
@@ -60,12 +57,12 @@ export function Customers() {
               <Fragment key={lista.id}>
                 <div className="slide">
                   <div>
-                    <img src={lista.imagem} height="100" width="250" />
+                    <NextImage src={lista.imagem} layout="fill" />
                   </div>
                 </div>
                 <div className="slide">
                   <div>
-                    <img src={lista.imagem} height="100" width="250" />
+                    <NextImage src={lista.imagem} layout="fill" />
                   </div>
                 </div>
               </Fragment>

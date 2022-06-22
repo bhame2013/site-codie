@@ -1,9 +1,9 @@
 import { Button } from "components/data/button";
 import { Service } from "./service-item";
-import { Servico } from "interfaces/models/catalogo/servico"
+import { IServico } from "interfaces/models/catalogo/servico"
 
 interface ServicesProps {
-  listServices: Servico | undefined;
+  listServices?: IServico;
 }
 
 export function ServicesComponent({ listServices }: ServicesProps) {

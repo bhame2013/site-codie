@@ -1,5 +1,5 @@
 import { Base } from '../base'
 
-export interface Portfolio extends Base {
+export interface IPortfolio extends Base {
   
 }

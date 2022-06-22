@@ -1,5 +1,5 @@
 import { Base } from '../base'
 
-export interface Marca extends Base {
+export interface IMarca extends Base {
   
 }

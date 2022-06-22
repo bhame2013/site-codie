@@ -3,7 +3,7 @@ module.exports = {
   images: {
     domains: [
       "localhost",
-      "images.codie.digital",
+      "painel.codie.com.br",
       "https://localhost:44387/",
     ],
   },

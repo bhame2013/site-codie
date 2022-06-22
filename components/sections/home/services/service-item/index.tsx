@@ -1,3 +1,5 @@
+import { Configs } from "services/configs";
+
 import { Button } from "components/data/button";
 import { Container } from "components/data/container";
 import { Title } from "components/data/title";
@@ -14,7 +16,7 @@ export function Service({
 }: ServiceProps) {
   return (
     <S.ServicesItem>
-      <div className="bg" style={{ backgroundImage: `url(${service.imagem ? "https://painel.codie.com.br/uploads/" + service.imagem : "/images/default.jpg"})` }}>
+      <div className="bg" style={{ backgroundImage: `url(${service.imagem ? Configs.baseUrl + service.imagem : "/images/default.jpg"})` }}>
         <Container>
         {service.subtitulo && service.titulo &&  <Title
             subTitle={{

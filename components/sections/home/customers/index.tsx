@@ -1,41 +1,23 @@
 import React, { Fragment } from "react";
-import { Container } from "components/data/container";
-import { Title } from "components/data/title";
 
-import * as S from "./styles";
+
+import { Title } from "components/data/title";
+import { Container } from "components/data/container";
 import { NextImage } from "components/data/NextImage";
 
-export function Customers() {
-  const listaDeImagens = [
-    {
-      id: 1,
-      imagem: "/images/logo-marca-default.png",
-    },
-    {
-      id: 2,
-      imagem: "/images/logo-marca-default.png",
-    },
-    {
-      id: 3,
-      imagem: "/images/logo-marca-default.png",
-    },
-    {
-      id: 4,
-      imagem: "/images/logo-marca-default.png",
-    },
-    {
-      id: 5,
-      imagem: "/images/logo-marca-default.png",
-    },
-    {
-      id: 6,
-      imagem: "/images/logo-marca-default.png",
-    },
-    {
-      id: 7,
-      imagem: "/images/logo-marca-default.png",
-    },
-  ];
+import { IMarca } from "interfaces/models/catalogo/marca"
+
+import * as S from "./styles";
+
+interface CustomersProps {
+  listCustomers?: IMarca[]
+}
+
+export function Customers({ listCustomers }: CustomersProps) {
+
+  if(!listCustomers) {
+    return <> </>
+  }
 
   return (
     <S.Customers>
@@ -52,17 +34,24 @@ export function Customers() {
 
       <div className="slider">
         <div className="slide-track">
-          {listaDeImagens.map((lista) => {
+          {listCustomers.map((customer) => {
             return (
-              <Fragment key={lista.id}>
+              <Fragment key={customer.id +  "customer-1"}>
                 <div className="slide">
                   <div>
-                    <NextImage src={lista.imagem} layout="fill" />
+                    <NextImage src={customer.imagem} layout="fill" isBaseUrl/>
                   </div>
                 </div>
+              </Fragment>
+            );
+          })}
+
+        {listCustomers.map((customer) => {
+            return (
+              <Fragment key={customer.id +  "customer-2"}>
                 <div className="slide">
                   <div>
-                    <NextImage src={lista.imagem} layout="fill" />
+                    <NextImage src={customer.imagem} layout="fill" isBaseUrl/>
                   </div>
                 </div>
               </Fragment>

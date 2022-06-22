@@ -2,9 +2,21 @@ import { Button } from "components/data/button";
 import { Container } from "components/data/container";
 import { Title } from "components/data/title";
 import { BoxPortfolio } from "./box-portfolio";
+
+import { IPortfolio } from "interfaces/models/catalogo/portfolio"
+
 import * as S from "./styles";
 
-export function Portfolio() {
+interface PortfolioProps {
+  listPortfolio?: IPortfolio[]
+}
+
+export function Portfolio({ listPortfolio }: PortfolioProps) {
+
+  if(!listPortfolio) {
+    return <> </>
+  }
+
   return (
     <S.Portfolio>
       <Container>
@@ -54,15 +66,11 @@ export function Portfolio() {
         </div>
 
         <div className="list-portfolio">
-          <BoxPortfolio image="/images/banner.jpg" title="tarobá news  " />
-          <BoxPortfolio image="/images/banner.jpg" title="ilumina solar" />
-          <BoxPortfolio image="/images/banner.jpg" title="ecofood" />
-          <BoxPortfolio image="/images/banner.jpg" title="leanwork" />
-          <BoxPortfolio image="/images/banner.jpg" title="escola ieij" />
-          <BoxPortfolio image="/images/banner.jpg" title="ponto rural" />
-          <BoxPortfolio image="/images/banner.jpg" title="Banner " />
-          <BoxPortfolio image="/images/banner.jpg" title="Banner " />
-          <BoxPortfolio image="/images/banner.jpg" title="Banner " />
+          {
+            listPortfolio.map((portfolio) => {
+              return <BoxPortfolio key={portfolio.id + "-portfolio"} image={portfolio.imagem} title={portfolio.titulo} />
+            })
+          }
         </div>
       </Container>
     </S.Portfolio>

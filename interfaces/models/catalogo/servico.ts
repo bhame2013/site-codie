@@ -1,5 +1,5 @@
 import { Pagination } from "interfaces/pagination"
 
-export interface Servico extends Pagination {
+export interface IServico extends Pagination {
   
 }

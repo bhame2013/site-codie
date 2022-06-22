@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import axios from "axios";
 import { api } from "services/api";
 
 import { Loading } from "components/data/loading";
@@ -13,25 +14,33 @@ import { Customers } from "components/sections/home/customers";
 import { Depositions } from "components/sections/home/depositions";
 import { ServicesComponent } from "components/sections/home/services";
 
-import { HomeProps } from "interfaces/pages/home";
-import { Servico } from "interfaces/models/catalogo/servico"
-
+import { IHomeProps } from "interfaces/pages/home";
+import { IServico } from "interfaces/models/catalogo/servico"
+import { IPortfolio } from "interfaces/models/catalogo/portfolio"
+import { IMarca } from "interfaces/models/catalogo/marca"
 
 export default function HomePage() {
-  const [home, setHome] = useState<HomeProps | undefined>(undefined);
+  const [home, setHome] = useState<IHomeProps>({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
-      const servicos = await api.get<Servico>("Servico/list/home");
+    const services =  await api.get<IServico>("Servico/list/home");
+    const portfolio =  await api.get<IPortfolio[]>("/Component/portfolio/home");
+    const customers =  await api.get<IMarca[]>("/Component/marcas/GetAll");
 
-     setHome({
-      services: servicos.data
+    setHome({
+      services: services.data,
+      portfolio: portfolio.data,
+      customers: customers.data
      })
+
+     setLoading(false)
 
     })();
   }, []);
 
-  if(home === undefined) {
+  if(loading) {
     return <Loading/>
   }
 
@@ -42,9 +51,9 @@ export default function HomePage() {
       <div id="scroll">
         <ServicesComponent listServices={home.services}/>
 
-        <Portfolio />
+        <Portfolio listPortfolio={home.portfolio} />
 
-        <Customers />
+        <Customers listCustomers={home.customers}/>
 
         <Depositions theme="--secondary-color" />
 

@@ -11,38 +11,37 @@ import { Depositions } from "components/sections/home/depositions";
 import { ServicesComponent } from "components/sections/home/services";
 
 //interfaces
-import { IBanner } from "components/sections/home/banner";
+import { HomeProps } from "interfaces/pages/home";
+import { Servico } from "interfaces/models/catalogo/servico"
 
 import { api } from "services/api";
 import { Loading } from "components/data/loading";
 
+
 export default function HomePage() {
-  // const [banner, setBanner] = useState<IBanner[]>([]);
-  // const [loading, setLoading] = useState(true)
+  const [home, setHome] = useState<HomeProps | undefined>(undefined);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const promise1 = api.get<IBanner[]>("/banner/home");
-  //     const promise2 = api.get("/portfolio");
+  useEffect(() => {
+    (async () => {
+      const servicos = await api.get<Servico>("Servico/list/home");
 
-  //     Promise.all([promise1, promise2]).then(function (values) {
-  //       console.log(values);
+     setHome({
+      services: servicos.data
+     })
 
-  //       setLoading(false)
-  //     });
-  //   })();
-  // }, []);
+    })();
+  }, []);
 
-  // if(loading) {
-  //   return <Loading/>
-  // }
+  if(home === undefined) {
+    return <Loading/>
+  }
 
   return (
     <LayoutComponent>
       <Banner banners={[]} />
 
       <div id="scroll">
-        <ServicesComponent />
+        <ServicesComponent listServices={home.services}/>
 
         <Portfolio />
 

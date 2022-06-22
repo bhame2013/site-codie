@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: "https://api.codie.digital.com.br/ ",
+    baseURL: "https://localhost:44387/",
 });
 

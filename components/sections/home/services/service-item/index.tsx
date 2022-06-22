@@ -2,52 +2,41 @@ import { Button } from "components/data/button";
 import { Container } from "components/data/container";
 import { Title } from "components/data/title";
 
+import { Base } from 'interfaces/models/base'
 import * as S from "./styles";
 
 interface ServiceProps {
-  image: string;
-  title: string;
-  subTitle: string;
-  paragraph: string;
-  link: {
-    href: string;
-    textIn: string;
-    textOut: string;
-  };
+  service: Base;
 }
 
 export function Service({
-  image,
-  title,
-  subTitle,
-  paragraph,
-  link,
+  service
 }: ServiceProps) {
   return (
     <S.ServicesItem>
-      <div className="bg" style={{ backgroundImage: `url(${image})` }}>
+      <div className="bg" style={{ backgroundImage: `url(${service.imagem ? "https://painel.codie.com.br/uploads/" + service.imagem : "/images/default.jpg"})` }}>
         <Container>
-          <Title
+        {service.subtitulo && service.titulo &&  <Title
             subTitle={{
               size: 4,
-              text: subTitle,
+              text: service.subtitulo,
             }}
             title={{
               size: 2,
-              text: title,
+              text: service.titulo,
             }}
             color="light"
             margin="45"
-          />
+          />}
 
-          <p className="paragraph-3-medium">{paragraph}</p>
+         {service.descricao && <p className="paragraph-3-medium">{service.descricao}</p>}
 
-          <Button
-            href={link.href}
-            textIn={link.textIn}
-            textOut={link.textOut}
+        { service.url &&   <Button
+            href={service.url}
+            textIn="saiba mais"
+            textOut="saiba mais"
             color="--text-primary-color-light"
-          />
+          />}
         </Container>
       </div>
     </S.ServicesItem>

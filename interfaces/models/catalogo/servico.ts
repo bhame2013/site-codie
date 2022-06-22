@@ -1,5 +1,5 @@
-import { Base } from '../base'
+import { Pagination } from "interfaces/pagination"
 
-export interface Servico extends Base {
+export interface Servico extends Pagination {
   
 }

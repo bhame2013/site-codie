@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Banner = styled.section`
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 
   .carousel-absolute {
     position: absolute;
@@ -13,7 +14,7 @@ export const Banner = styled.section`
   }
 
   .bg {
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     position: relative;
   }

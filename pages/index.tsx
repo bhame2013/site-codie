@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import axios from "axios";
 import { api } from "services/api";
 
 import { Loading } from "components/data/loading";
@@ -15,54 +14,78 @@ import { Depositions } from "components/sections/home/depositions";
 import { ServicesComponent } from "components/sections/home/services";
 
 import { IHomeProps } from "interfaces/pages/home";
-import { IServico } from "interfaces/models/catalogo/servico"
-import { IPortfolio } from "interfaces/models/catalogo/portfolio"
-import { IMarca } from "interfaces/models/catalogo/marca"
+import { IMarca } from "interfaces/models/catalogo/marca";
+import { IBanner } from "interfaces/models/conteudo/banner";
+import { IServico } from "interfaces/models/catalogo/servico";
+import { IPortfolio } from "interfaces/models/catalogo/portfolio";
 
 export default function HomePage() {
   const [home, setHome] = useState<IHomeProps>({});
   const [loading, setLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
     (async () => {
-    const services =  await api.get<IServico>("Servico/list/home");
-    const portfolio =  await api.get<IPortfolio[]>("/Component/portfolio/home");
-    const customers =  await api.get<IMarca[]>("/Component/marcas/GetAll");
+      try {
+        const banner = await api.get<IBanner[]>("component/banners/home");
+        setLoadingProgress(15);
 
-    setHome({
-      services: services.data,
-      portfolio: portfolio.data,
-      customers: customers.data
-     })
+        const services = await api.get<IServico>("Servico/list/home");
 
-     setLoading(false)
+        setLoadingProgress(33);
 
+        const portfolio = await api.get<IPortfolio[]>(
+          "/Component/portfolio/home"
+        );
+
+        setLoadingProgress(50);
+
+        const customers = await api.get<IMarca[]>("/Component/marcas/GetAll");
+
+        setHome({
+          banner: banner.data,
+          services: services.data,
+          portfolio: portfolio.data,
+          customers: customers.data,
+        });
+
+        setLoadingProgress(99);
+
+        setTimeout(() => {
+          setLoadingProgress(100);
+          setLoading(false);
+        }, 3000);
+      } catch (e) {
+        // setLoading(false);
+      }
     })();
   }, []);
 
-  if(loading) {
-    return <Loading/>
-  }
-
   return (
     <LayoutComponent>
-      <Banner banners={[]} />
+      <Loading progress={loadingProgress} />
 
-      <div id="scroll">
-        <ServicesComponent listServices={home.services}/>
+      {home.banner && <Banner banners={home.banner} />}
 
-        <Portfolio listPortfolio={home.portfolio} />
+      {loadingProgress === 100 && (
+        <>
+          <div id="scroll">
+            <ServicesComponent listServices={home.services} />
 
-        <Customers listCustomers={home.customers}/>
+            <Portfolio listPortfolio={home.portfolio} />
 
-        <Depositions theme="--secondary-color" />
+            <Customers listCustomers={home.customers} />
 
-        <Blog />
+            <Depositions theme="--secondary-color" />
 
-        <About />
+            <Blog />
 
-        <Contact />
-      </div>
+            <About />
+
+            <Contact />
+          </div>
+        </>
+      )}
     </LayoutComponent>
   );
 }

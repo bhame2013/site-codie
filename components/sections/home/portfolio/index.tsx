@@ -13,7 +13,7 @@ interface PortfolioProps {
 
 export function Portfolio({ listPortfolio }: PortfolioProps) {
 
-  if(!listPortfolio) {
+  if(!listPortfolio || listPortfolio.length === 0) {
     return <> </>
   }
 

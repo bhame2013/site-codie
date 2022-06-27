@@ -1,26 +1,31 @@
+
 import Link from "next/link";
-import { NextImage } from "components/data/NextImage";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
 
 import { api } from "services/api";
 
 import { Title } from "components/data/title";
 import { Container } from "components/data/container";
+import { NextImage } from "components/data/NextImage";
 import { linksMenu } from "components/layout/header/linksMenu";
-import { Swiper, SwiperSlide } from "swiper/react";
+
+import { IBanner } from "interfaces/models/conteudo/banner";
+
 import * as S from "./styles";
 
-export interface IBanner {
-  id: number;
-  imagem: string;
-  titulo: string;
-  subTitulo: string;
-}
 
 interface BannerProps {
-  banners: IBanner[];
+  banners?: IBanner[];
 }
 
 export function Banner({ banners }: BannerProps) {
+
+  if(!banners) {
+    return <></>
+  }
+
   return (
     <S.Banner>
       <div className="carousel-absolute">
@@ -29,7 +34,6 @@ export function Banner({ banners }: BannerProps) {
             <div className="bg">
               <NextImage
                 src="/images/banner.jpg"
-                alt={"imagem banner codie"}
                 layout="fill"
               />
             </div>
@@ -55,8 +59,8 @@ export function Banner({ banners }: BannerProps) {
                   <div className="bg">
                     <NextImage
                       src={banner.imagem}
-                      alt={"imagem de" + banner.titulo}
                       layout="fill"
+                      isBaseUrl
                     />
                   </div>
                 </SwiperSlide>

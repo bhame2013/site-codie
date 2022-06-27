@@ -1,5 +1,7 @@
 import { Configs } from "services/configs";
 
+import parser from "html-react-parser";
+
 import { Button } from "components/data/button";
 import { Container } from "components/data/container";
 import { Title } from "components/data/title";
@@ -31,7 +33,7 @@ export function Service({
             margin="45"
           />}
 
-         {service.descricao && <p className="paragraph-3-medium">{service.descricao}</p>}
+         {service.descricao && <p className="paragraph-3-medium">{parser(service.descricao)}</p>}
 
         { service.url &&   <Button
             href={service.url}

@@ -1,5 +1,5 @@
 import { Base } from '../base'
 
-export interface Banner extends Base {
+export interface IBanner extends Base {
  
 }

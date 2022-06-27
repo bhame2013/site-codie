@@ -6,6 +6,11 @@ export const ServicesItem = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    aspect-ratio: 1920/800;
+    min-height: 450px;
+    max-height: 800px;
+    width: 100%;
+    display: flex;
   }
 
   p {
@@ -14,8 +19,6 @@ export const ServicesItem = styled.div`
   }
 
   .container {
-    aspect-ratio: 1920/800;
-    min-height: 560px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

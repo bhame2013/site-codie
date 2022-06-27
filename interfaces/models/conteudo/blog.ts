@@ -1,5 +1,8 @@
-import { Base } from '../base'
+import { Base } from 'interfaces/models/base'
 
-export interface Blog extends Base {
-  
+import { Pagination } from '../../pagination'
+
+
+export interface IBlog extends Pagination {
+    posts?: Base[]
 }

@@ -3,9 +3,6 @@ import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-
-import { api } from "services/api";
-
 import { Title } from "components/data/title";
 import { Container } from "components/data/container";
 import { NextImage } from "components/data/NextImage";
@@ -14,7 +11,6 @@ import { linksMenu } from "components/layout/header/linksMenu";
 import { IBanner } from "interfaces/models/conteudo/banner";
 
 import * as S from "./styles";
-
 
 interface BannerProps {
   banners?: IBanner[];

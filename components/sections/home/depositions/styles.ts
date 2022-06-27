@@ -48,19 +48,4 @@ export const Depositions = styled.section<DepositionsStyleProps>`
     width: 100%;
   }
 
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-
-    button {
-      background-color: unset;
-      border: 0;
-
-      svg {
-        stroke: ${(props) => `var(${props.theme})`};
-      }
-    }
-  }
 `;

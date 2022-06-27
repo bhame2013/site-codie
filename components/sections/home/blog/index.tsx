@@ -1,10 +1,26 @@
-import { Button } from "components/data/button";
-import { Container } from "components/data/container";
-import * as S from "./styles";
-import { Title } from "components/data/title";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export function Blog() {
+import { Title } from "components/data/title";
+import { Button } from "components/data/button";
+import { Container } from "components/data/container";
+import { Navigation } from "components/data/navigation";
+
+import { IBlog } from "interfaces/models/conteudo/blog";
+
+import * as S from "./styles";
+import { NextImage } from "components/data/NextImage";
+
+interface BlogProps {
+  listBlog?: IBlog;
+}
+
+export function Blog({ listBlog }: BlogProps) {
+  if (!listBlog || listBlog === null || !listBlog.posts || listBlog === null) {
+    return <div></div>;
+  }
+
+  console.log();
+
   return (
     <S.Blog>
       <Swiper
@@ -15,89 +31,55 @@ export function Blog() {
           nextEl: ".nav-right-blog",
           prevEl: ".nav-left-blog",
         }}
+        effect={"fade"}
         allowTouchMove={false}
       >
-        <SwiperSlide></SwiperSlide>
-      </Swiper>
+        {listBlog.posts.map((blog) => {
+          return (
+            <SwiperSlide key={blog.id}>
+              <div className="blog-item">
+                {blog.imagem && (
+                  <NextImage src={blog.imagem} layout="fill" isBaseUrl />
+                )}
 
-      <div className="nav">
-        <button type="button" className="nav-left">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="46"
-            height="46"
-            viewBox="0 0 46 46"
-          >
-            <defs>
-              <clipPath id="e9zaa">
-                <path
-                  fill="#fff"
-                  d="M0 23C0 10.297 10.297 0 23 0s23 10.297 23 23-10.297 23-23 23S0 35.703 0 23z"
-                />
-              </clipPath>
-            </defs>
-            <g>
-              <g transform="rotate(-180 23 23)">
-                <g>
-                  <path
-                    fill="none"
-                    strokeMiterlimit="20"
-                    strokeWidth="4"
-                    d="M0 23C0 10.297 10.297 0 23 0s23 10.297 23 23-10.297 23-23 23S0 35.703 0 23z"
-                    clipPath='url("#e9zaa")'
-                  />
-                </g>
-                <g transform="rotate(45 21.5 22.5)">
-                  <path
-                    fill="none"
-                    strokeMiterlimit="20"
-                    strokeWidth="2"
-                    d="M11.767 15.944v0H26.16v14.392"
-                  />
-                </g>
-              </g>
-            </g>
-          </svg>
-        </button>
-        <button type="button" className="nav-right">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="46"
-            height="46"
-            viewBox="0 0 46 46"
-          >
-            <defs>
-              <clipPath id="hmrsa">
-                <path
-                  fill="#fff"
-                  d="M0 23C0 10.297 10.297 0 23 0s23 10.297 23 23-10.297 23-23 23S0 35.703 0 23z"
-                />
-              </clipPath>
-            </defs>
-            <g>
-              <g>
-                <g>
-                  <path
-                    fill="none"
-                    strokeMiterlimit="20"
-                    strokeWidth="4"
-                    d="M0 23C0 10.297 10.297 0 23 0s23 10.297 23 23-10.297 23-23 23S0 35.703 0 23z"
-                    clipPath='url("#hmrsa")'
-                  />
-                </g>
-                <g transform="rotate(45 24.5 23.5)">
-                  <path
-                    fill="none"
-                    strokeMiterlimit="20"
-                    strokeWidth="2"
-                    d="M11.767 15.944v0H26.16v14.392"
-                  />
-                </g>
-              </g>
-            </g>
-          </svg>
-        </button>
-      </div>
+                <Container>
+                  <div className="content">
+                    {blog.subtitulo && blog.titulo && (
+                      <Title
+                        subTitle={{
+                          size: 4,
+                          text: blog.subtitulo,
+                        }}
+                        title={{
+                          size: 3,
+                          text: blog.titulo,
+                        }}
+                        color="light"
+                        margin={40}
+                      />
+                    )}
+
+                    {blog.url && (
+                      <Button
+                        href={"/blog" + blog.url}
+                        textIn="ler mais"
+                        textOut="ler mais"
+                        color="--text-primary-color-light"
+                      />
+                    )}
+
+                    <Navigation
+                      theme="--text-primary-color-light"
+                      left="nav-left-blog"
+                      right="nav-right-blog"
+                    />
+                  </div>
+                </Container>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </S.Blog>
   );
 }

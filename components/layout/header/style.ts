@@ -41,6 +41,27 @@ export const Header = styled.header`
     .block-bar {
       div {
         background-color: var(--secondary-color);
+        transition: 0.3s;
+      }
+
+      div:first-child {
+        transform: rotate(-45deg) translate(-9px,6px);
+        transition: 0.3s;
+      }
+
+      div:nth-child(2) {
+        opacity: 0;
+      }
+
+      div:last-child {
+        transform: rotate(45deg) translate(-6px,-3px);
+        transition: 0.3s;
+      }
+    }
+
+    .block-bar:hover {
+      div {
+        background-color: var(--primary-color);
       }
     }
   }

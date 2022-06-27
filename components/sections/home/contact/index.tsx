@@ -25,7 +25,11 @@ interface SubmitForm {
   message: string;
 }
 
-export function Contact() {
+interface ContactProps {
+  theme?: "--secondary-color" | "--secondary-color"
+}
+
+export function Contact({ theme }: ContactProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -76,7 +80,7 @@ export function Contact() {
   }
 
   return (
-    <S.Contact>
+    <S.Contact theme={theme}>
       <Container>
 
     
@@ -86,7 +90,7 @@ export function Contact() {
               size: 3,
               text: "entre em contato",
             }}
-            color="dark"
+            color={theme ? "light" : "dark"}
             margin={20}
           />
 
@@ -132,7 +136,7 @@ export function Contact() {
               type="submit"
               textIn="enviar"
               textOut="enviar"
-              color="--text-primary-color-dark"
+              color={theme ? "--text-primary-color-light" : "--text-primary-color-dark"}
             />
           </div>
         </Form>

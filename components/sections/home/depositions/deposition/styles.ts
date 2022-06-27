@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Customer = styled.div`
-  p {
+ .description-customer {
     overflow: hidden;
     line-height: 25px;
     height: 125px;

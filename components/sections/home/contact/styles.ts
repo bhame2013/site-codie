@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
-export const Contact = styled.section`
-  padding: 100px 0 80px;
-  background-color: var(--text-primary-color-intermediary);
+interface ContactStyleProps {
+  theme?: "--secondary-color" | "--secondary-color"
+}
 
+
+export const Contact = styled.section<ContactStyleProps>`
+  padding: ${props => props.theme ? "200px 0 80px" : "100px 0 80px"};
+  background-color: ${props => props.theme ? `var(${props.theme})`: "var(--text-primary-color-intermediary)"};
+  color:  ${props => props.theme ? "#fff !important" : "unset"};
+  
   .container {
     display: flex;
     align-items: flex-start;
@@ -69,7 +75,7 @@ export const Contact = styled.section`
   }
 
   @media only screen and (max-width: 1600px) {
-    padding: 85px 0 70px;
+    padding: ${props => props.theme ? "185px 0 70px" : "85px 0 70px"};
 
     .container {
       gap: 65px;
@@ -89,7 +95,7 @@ export const Contact = styled.section`
   }
 
   @media only screen and (max-width: 1400px) {
-    padding: 70px 0 65px;
+    padding: ${props => props.theme ? "170px 0 65px" : "70px 0 65px"};
 
     .container {
       gap: 30px;
@@ -113,7 +119,7 @@ export const Contact = styled.section`
   }
 
   @media only screen and (max-width: 1200px) {
-    padding: 60px 0 55px;
+    padding: ${props => props.theme ? "150px 0 55px" : "60px 0 55px"};
 
     form {
       max-width: 390px;
@@ -125,7 +131,7 @@ export const Contact = styled.section`
   }
 
   @media only screen and (max-width: 1024px) {
-    padding: 35px 0 45px;
+    padding: ${props => props.theme ? "140px 0 45px" : "35px 0 45px"};
 
     .container {
       flex-direction: column;
@@ -164,7 +170,7 @@ export const Contact = styled.section`
   }
 
   @media only screen and (max-width: 768px) {
-    padding: 30px 0 25px;
+    padding: ${props => props.theme ? "140px 0 25px" : "30px 0 25px"};
 
     .box-left {
       div {
@@ -182,7 +188,7 @@ export const Contact = styled.section`
   }
 
   @media only screen and (max-width: 500px) {
-    padding: 20px 0;
+    padding: ${props => props.theme ? "140px 0 20px" : "20px 0"};
 
     .container {
       max-width: 90vw;

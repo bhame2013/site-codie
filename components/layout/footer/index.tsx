@@ -21,14 +21,6 @@ export function FooterComponent() {
             <h3 className="link-3-bold">institucional</h3>
 
             <ul>
-              <li>
-                <Link href="/" passHref>
-                  <a href="replaced" className="link-3-regular">
-                    Home
-                  </a>
-                </Link>
-              </li>
-
               {linksMenu.map((link) => {
                 return (
                   <li key={link.href + link.text}>
@@ -80,7 +72,7 @@ export function FooterComponent() {
               {footerNavigation.redesSociais.map((rede) => {
                 return (
                   <li key={"rede-social" + rede.id}>
-                    <a href={rede.href} className="link-3-regular">
+                    <a href={rede.href} target={rede.target ? rede.target : "_self"} className="link-3-regular">
                       <i>
                         <img src={rede.imagem} />
                       </i>
@@ -99,7 +91,7 @@ export function FooterComponent() {
               {footerNavigation.contato.map((item) => {
                 return (
                   <li key={"rede-social" + item.id}>
-                    <a href={item.href} className="link-3-regular">
+                    <a href={item.href} target={item.target ? item.target : "_self"} className="link-3-regular">
                       <i>
                         <img src={item.imagem} />
                       </i>

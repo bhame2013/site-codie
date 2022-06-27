@@ -18,9 +18,11 @@ import { IMarca } from "interfaces/models/catalogo/marca";
 import { IBanner } from "interfaces/models/conteudo/banner";
 import { IServico } from "interfaces/models/catalogo/servico";
 import { IPortfolio } from "interfaces/models/catalogo/portfolio";
+import { IDepoimento } from "interfaces/models/conteudo/depoimento";
+import { IBlog } from "interfaces/models/conteudo/blog";
 
 export default function HomePage() {
-  const [home, setHome] = useState<IHomeProps>({});
+  const [home, setHome] = useState<IHomeProps | undefined>(undefined);
   const [loading, setLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
 
@@ -40,13 +42,25 @@ export default function HomePage() {
 
         setLoadingProgress(50);
 
+        const depoimentos = await api.get<IDepoimento[]>(
+          "/component/depoimentos/GetAll"
+        );
+
+        setLoadingProgress(65);
+
         const customers = await api.get<IMarca[]>("/Component/marcas/GetAll");
+
+        setLoadingProgress(80);
+
+        const blogs = await api.get<IBlog>("/blog/list/home");
 
         setHome({
           banner: banner.data,
           services: services.data,
           portfolio: portfolio.data,
           customers: customers.data,
+          depoiments: depoimentos.data,
+          blogs: blogs.data,
         });
 
         setLoadingProgress(99);
@@ -65,26 +79,33 @@ export default function HomePage() {
     <LayoutComponent>
       <Loading progress={loadingProgress} />
 
-      {home.banner && <Banner banners={home.banner} />}
+      {home && (
+        <div>
+          {home.banner && <Banner banners={home.banner} />}
 
-      {loadingProgress === 100 && (
-        <>
-          <div id="scroll">
-            <ServicesComponent listServices={home.services} />
+          {loadingProgress === 100 && (
+            <>
+              <div id="scroll">
+                <ServicesComponent listServices={home.services} />
 
-            <Portfolio listPortfolio={home.portfolio} />
+                <Portfolio listPortfolio={home.portfolio} />
 
-            <Customers listCustomers={home.customers} />
+                <Customers listCustomers={home.customers} />
 
-            <Depositions theme="--secondary-color" />
+                <Depositions
+                  theme="--secondary-color"
+                  listDepoiments={home.depoiments}
+                />
 
-            <Blog />
+                <Blog listBlog={home.blogs} />
 
-            <About />
+                <About />
 
-            <Contact />
-          </div>
-        </>
+                <Contact />
+              </div>
+            </>
+          )}
+        </div>
       )}
     </LayoutComponent>
   );

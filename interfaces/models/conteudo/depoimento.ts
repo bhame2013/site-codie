@@ -1,5 +1,5 @@
 import { Base } from '../base'
 
-export interface Depoimento extends Base {
+export interface IDepoimento extends Base {
   
 }

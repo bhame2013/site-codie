@@ -30,7 +30,7 @@ export const Banner = styled.section`
     position: relative;
   }
 
-  p {
+  .description {
     min-height: 50px;
     max-width: 675px;
     width: 100%;
@@ -47,6 +47,25 @@ export const Banner = styled.section`
     align-items: center;
     gap: 9px;
     color: var(--text-primary-color-light);
+
+    svg {
+      animation: 2s infinite linear forwards Scroll;
+      transform: translateY(-30%);
+    }
+  }
+
+  @keyframes Scroll {
+    0% {
+      transform: translateY(-10%);
+    }
+
+    50% {
+      transform: translateY(10%);
+    }
+
+    100% {
+      transform: translateY(-10%);
+    }
   }
 
   .heightMenu {

@@ -20,7 +20,7 @@ export default function HomePage() {
 
       {home && (
         <div>
-          {home.banner && <Banner banners={home.banner} />}
+          {home.banner && <Banner banners={home.banner} hasMenu/>}
 
           {loadingProgress === 100 && (
             <>

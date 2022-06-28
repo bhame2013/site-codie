@@ -30,6 +30,7 @@ function HomeProvider({ children }: ProvidersProps) {
     (async () => {
       try {
         const banner = await api.get<IBanner[]>("component/banners/home");
+        
         setLoadingProgress(15);
 
         const services = await api.get<IServico>("Servico/list/home");

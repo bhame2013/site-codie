@@ -5,7 +5,7 @@ import { Form } from "@unform/web";
 import parser from "html-react-parser";
 import { FormHandles } from "@unform/core";
 
-import { YupValidation } from "services/yup-validation";
+import { YupValidation } from "services/utils/yup-validation";
 import { ContactOptions } from "./contact-options";
 
 import { Title } from "components/data/title";

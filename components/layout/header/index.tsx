@@ -18,7 +18,7 @@ export function HeaderComponent() {
           </div>
 
           <Link href="/" passHref>
-            <a href="replaced" onClick={() => setMenu(!menu)}>
+            <a href="replaced" onClick={() => setMenu(false)}>
               <img src="/images/logo-codie.png" alt="logo marca" />
             </a>
           </Link>

@@ -1,7 +1,7 @@
-
 import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import parser from "html-react-parser";
 
 import { Title } from "components/data/title";
 import { Container } from "components/data/container";
@@ -14,12 +14,12 @@ import * as S from "./styles";
 
 interface BannerProps {
   banners?: IBanner[];
+  hasMenu?: boolean;
 }
 
-export function Banner({ banners }: BannerProps) {
-
-  if(!banners) {
-    return <></>
+export function Banner({ banners, hasMenu }: BannerProps) {
+  if (!banners) {
+    return <></>;
   }
 
   return (
@@ -28,10 +28,7 @@ export function Banner({ banners }: BannerProps) {
         {banners.length === 0 ? (
           <div className="carousel-absolute">
             <div className="bg">
-              <NextImage
-                src="/images/banner.jpg"
-                layout="fill"
-              />
+              <NextImage src="/images/banner.jpg" layout="fill" />
             </div>
           </div>
         ) : (
@@ -53,11 +50,7 @@ export function Banner({ banners }: BannerProps) {
               return (
                 <SwiperSlide key={banner.id + "banner-home"}>
                   <div className="bg">
-                    <NextImage
-                      src={banner.imagem}
-                      layout="fill"
-                      isBaseUrl
-                    />
+                    <NextImage src={banner.imagem} layout="fill" isBaseUrl />
                   </div>
                 </SwiperSlide>
               );
@@ -70,21 +63,25 @@ export function Banner({ banners }: BannerProps) {
         <div className="heightMenu"></div>
 
         <div>
-          <Title
-            subTitle={{
-              size: 2,
-              text: "um novo",
-            }}
-            title={{
-              size: 1,
-              text: "momento codie",
-            }}
-            color="light"
-            margin="45"
-            isMainTitle
-          />
+          {banners[0].subtitulo && banners[0].titulo && (
+            <Title
+              subTitle={{
+                size: 2,
+                text: banners[0].subtitulo,
+              }}
+              title={{
+                size: 1,
+                text: banners[0].titulo,
+              }}
+              color="light"
+              margin="45"
+              isMainTitle
+            />
+          )}
 
-          <p className="paragraph-2-regular"></p>
+          <div className="paragraph-2-regular description">
+            {banners[0]?.descricao ? parser(banners[0].descricao) : ""}
+          </div>
 
           <a href="#scroll" className="scroll link-1-bold">
             <svg
@@ -129,19 +126,21 @@ export function Banner({ banners }: BannerProps) {
           </a>
         </div>
 
-        <div className="heightMenu">
-          <div className="menu-banner">
-            {linksMenu.map((link) => {
-              return (
-                <Link key={link.text + link.href} href={link.href} passHref>
-                  <a href="replaced" className="link-1-medium">
-                    {link.text}
-                  </a>
-                </Link>
-              );
-            })}
+        {hasMenu && (
+          <div className="heightMenu">
+            <div className="menu-banner">
+              {linksMenu.map((link) => {
+                return (
+                  <Link key={link.text + link.href} href={link.href} passHref>
+                    <a href="replaced" className="link-1-medium">
+                      {link.text}
+                    </a>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </Container>
     </S.Banner>
   );

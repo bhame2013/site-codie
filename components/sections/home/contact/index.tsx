@@ -26,7 +26,7 @@ interface SubmitForm {
 }
 
 interface ContactProps {
-  theme?: "--secondary-color" | "--secondary-color"
+  theme?: "--primary-color" | "--secondary-color"
 }
 
 export function Contact({ theme }: ContactProps) {
